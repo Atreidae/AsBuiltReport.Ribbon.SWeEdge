@@ -55,8 +55,12 @@ against configuration exports from the following;
 
 Both `.tar` archive exports and raw `symphonyconfig.xml` exports are supported.
 
-Collecting an export directly from an appliance requires the REST API. Older releases may not
-offer it, in which case export the configuration from the WebUI and report on the file.
+There are two ways to supply the configuration:
+
+- **REST API**: use this when the machine running the report has direct access to the SBC. The
+  report collects a fresh export for you.
+- **Offline export file**: use this when you do not have direct access to the SBC. Export the
+  configuration from the WebUI and report on the file.
 
 Where a release predates a feature, the legacy equivalent is read instead. For example,
 configurations older than 6.0 use translation tables rather than transformation tables.
@@ -75,10 +79,14 @@ The Ribbon SWeEdge As Built Report supports the following languages;
 
 ## :wrench: System Requirements
 
-PowerShell 5.1 or PowerShell 7, and the following PowerShell modules are required for generating a Ribbon SWeEdge As Built Report.
+All features are supported under PowerShell 7. Under Windows PowerShell 5.1 only some are; the
+Trunk Topology diagram requires PowerShell 7.
+
+The following PowerShell modules are required for generating a Ribbon SWeEdge As Built Report.
 
 - [AsBuiltReport.Ribbon.SWeEdge Module](https://www.powershellgallery.com/packages/AsBuiltReport.Ribbon.SWeEdge/)
 - [AsBuiltReport.Core Module](https://www.powershellgallery.com/packages/AsBuiltReport.Core/)
+- [AsBuiltReport.Diagram Module](https://www.powershellgallery.com/packages/AsBuiltReport.Diagram/) (optional, only for the Trunk Topology diagram; PowerShell 7 only)
 
 `tar` is required to read `.tar` configuration exports. It ships with Windows 10 1803 and
 later, and is present by default on Linux and macOS.
@@ -95,12 +103,12 @@ and it is not used.
 **Collecting from the appliance.** The report signs in to the SBC REST API and downloads a
 configuration backup. That needs a local account with the **REST** access level.
 
-The SBC does not create one for you, and an existing WebUI administrator will not work: REST is
-a separate access level, not an additional permission on an existing account. Create the account
-under local user management in the WebUI and set its access level to **REST**. It is usable
-straight away, as the forced password change on first sign in applies to WebUI accounts only.
-
-The account only needs to read configuration. Do not reuse an account you use for anything else.
+- The SBC does not create this account for you.
+- An existing WebUI administrator will not work. REST is a separate access level, not an
+  additional permission on an existing account.
+- Create the account under local user management in the WebUI and set its access level to **REST**.
+- It is usable straight away. The forced password change on first sign in applies to WebUI accounts only.
+- The account only needs to read configuration. Do not reuse an account you use for anything else.
 
 > [!IMPORTANT]
 > A Ribbon configuration export contains sensitive material, including certificate private
@@ -117,10 +125,10 @@ The account only needs to read configuration. Do not reuse an account you use fo
 
 ```powershell
 # Install
-install-module AsBuiltReport.Ribbon.SWeEdge -Force
+install-module AsBuiltReport.Ribbon.SWeEdge
 
 # Update
-update-module AsBuiltReport.Ribbon.SWeEdge -Force
+update-module AsBuiltReport.Ribbon.SWeEdge
 ```
 
 ### GitHub
@@ -175,7 +183,7 @@ The **Options** schema allows certain options within the report to be toggled on
 
 | Sub-Schema | Setting | Default | Description |
 |------------|--------------|---------|-------------|
-| ShowFirewallTable | true / false | true | Toggle to enable/disable the Firewall Requirements section |
+| ShowFirewallTable | true / false | true | Toggle to enable/disable the Firewall Requirements section. The table is derived from the appliance configuration and is not all-inclusive, so confirm it against your own network design |
 | ShowTopologyDiagram | true / false | false | Toggle to enable/disable the Trunk Topology diagram. Requires the optional `AsBuiltReport.Diagram` module (`Install-Module AsBuiltReport.Diagram`); Graphviz is not needed. Requires PowerShell 7 or later. If the module is missing the diagram is skipped with a warning. In Windows PowerShell 5.1 the report stops immediately and suggests re-running with `pwsh` |
 | SkipCertificateCheck | true / false | true | Ignore certificate validation errors when collecting an export from an appliance. Only applies when `Target` is a host name or IP address. Appliances normally present a self signed certificate, so this defaults to enabled. Set it to `false` once the SBC holds a certificate your machine trusts |
 
@@ -213,17 +221,17 @@ The **Healthcheck** schema is used to toggle health checks on or off.
 
 | Sub-Schema | Setting | Default | Description | Highlight |
 |------------|--------------|---------|-------------|-----------|
-| System.NtpEnabled | true / false | true | Highlights an appliance with no NTP server enabled. Certificate validity is judged against the appliance clock, so drift presents as TLS failures that look like certificate faults | ![Critical](https://place-hold.it/15/FEDDD7/FEDDD7.png) No time synchronisation |
-| Security.CertificateExpiry | true / false | true | Highlights appliance certificates by remaining validity | ![Critical](https://place-hold.it/15/FEDDD7/FEDDD7.png) Expired &nbsp; ![Warning](https://place-hold.it/15/FFF4C7/FFF4C7.png) Expiring soon |
+| System.NtpEnabled | true / false | true | Highlights an appliance with no NTP server enabled. Certificate validity is judged against the appliance clock, so drift presents as TLS failures that look like certificate faults | :red_circle: No time synchronisation |
+| Security.CertificateExpiry | true / false | true | Highlights appliance certificates by remaining validity | :red_circle: Expired &nbsp; :yellow_circle: Expiring soon |
 | Security.CertificateExpiryWarningDays | Number | 60 | Days remaining below which a certificate is treated as expiring soon | |
-| SignalingGroup.DrainState | true / false | true | Highlights a signalling group left in the Drain state. It still answers OPTIONS, so monitoring shows it healthy, but it rejects every call | ![Warning](https://place-hold.it/15/FFF4C7/FFF4C7.png) Draining |
-| SignalingGroup.DisabledGroup | true / false | true | Highlights a disabled signalling group. Usually deliberate, but the common explanation for a trunk that looks configured and does not work | ![Warning](https://place-hold.it/15/FFF4C7/FFF4C7.png) Disabled |
-| SignalingGroup.UnresolvedReference | true / false | true | Highlights a signalling group referring to an object that is not in the configuration, such as a deleted route table or media list | ![Critical](https://place-hold.it/15/FEDDD7/FEDDD7.png) Broken reference |
-| CallRouting.DisabledRoute | true / false | true | Highlights a disabled route entry. Calls that appear to match it fall through to the next route, or fail | ![Warning](https://place-hold.it/15/FFF4C7/FFF4C7.png) Disabled |
-| CallRouting.UnresolvedReference | true / false | true | Highlights a route referring to an object that is not in the configuration, such as a deleted destination signalling group or transformation table | ![Critical](https://place-hold.it/15/FEDDD7/FEDDD7.png) Broken reference |
+| SignalingGroup.DrainState | true / false | true | Highlights a signalling group left in the Drain state. It still answers OPTIONS, so monitoring shows it healthy, but it rejects every call | :yellow_circle: Draining |
+| SignalingGroup.DisabledGroup | true / false | true | Highlights a disabled signalling group. Usually deliberate, but the common explanation for a trunk that looks configured and does not work | :yellow_circle: Disabled |
+| SignalingGroup.UnresolvedReference | true / false | true | Highlights a signalling group referring to an object that is not in the configuration, such as a deleted route table or media list | :red_circle: Broken reference |
+| CallRouting.DisabledRoute | true / false | true | Highlights a disabled route entry. Calls that appear to match it fall through to the next route, or fail | :yellow_circle: Disabled |
+| CallRouting.UnresolvedReference | true / false | true | Highlights a route referring to an object that is not in the configuration, such as a deleted destination signalling group or transformation table | :red_circle: Broken reference |
 | Configuration.UnreferencedObject | true / false | true | Adds a section listing configuration objects that nothing refers to, and objects reached only through a disabled referrer | |
-| Logging.VerboseLogging | true / false | true | Highlights subsystems and syslog destinations left at Trace or Debug level | ![Warning](https://place-hold.it/15/FFF4C7/FFF4C7.png) Verbose logging enabled |
-| SIP.ConsistentTlsProfile | true / false | true | Highlights a SIP server using a different TLS profile to the rest of its server table | ![Warning](https://place-hold.it/15/FFF4C7/FFF4C7.png) Inconsistent profile |
+| Logging.VerboseLogging | true / false | true | Highlights subsystems and syslog destinations left at Trace or Debug level | :yellow_circle: Verbose logging enabled |
+| SIP.ConsistentTlsProfile | true / false | true | Highlights a SIP server using a different TLS profile to the rest of its server table | :yellow_circle: Inconsistent profile |
 
 > [!NOTE]
 > Some health checks are tied to an InfoLevel, because they highlight a row in a table that
@@ -278,8 +286,9 @@ removed once the report has been rendered.
 
 ## :world_map: Roadmap
 
-Planned and proposed work is recorded in [ROADMAP.md](ROADMAP.md), including topology diagrams,
-SIP message manipulation reporting and the remaining configuration coverage gaps.
+Planned and proposed work is recorded in [ROADMAP.md](ROADMAP.md), including further
+topology diagrams (the trunk topology diagram is already implemented), SIP message manipulation
+reporting and the remaining configuration coverage gaps.
 
 ## :heart: Acknowledgements
 

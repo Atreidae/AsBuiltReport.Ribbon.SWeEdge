@@ -162,12 +162,20 @@ if ($CodeCoverage -and $TestResults.CodeCoverage) {
     Write-Host "======================================" -ForegroundColor Cyan
 
     $Coverage = $TestResults.CodeCoverage
-    $CoveragePercent = [math]::Round(($Coverage.NumberOfCommandsExecuted / $Coverage.NumberOfCommandsAnalyzed) * 100, 2)
+    $CoveragePercent = if ($Coverage.NumberOfCommandsAnalyzed -gt 0) {
+        [math]::Round(($Coverage.NumberOfCommandsExecuted / $Coverage.NumberOfCommandsAnalyzed) * 100, 2)
+    } else {
+        $null
+    }
 
     Write-Host "Commands Analyzed: $($Coverage.NumberOfCommandsAnalyzed)" -ForegroundColor White
     Write-Host "Commands Executed: $($Coverage.NumberOfCommandsExecuted)" -ForegroundColor White
     Write-Host "Commands Missed: $($Coverage.NumberOfCommandsMissed)" -ForegroundColor White
-    Write-Host "Coverage: $CoveragePercent%" -ForegroundColor $(if ($CoveragePercent -ge 80) { 'Green' } elseif ($CoveragePercent -ge 60) { 'Yellow' } else { 'Red' })
+    if ($null -eq $CoveragePercent) {
+        Write-Host 'Coverage: Not available (no commands analyzed)' -ForegroundColor Gray
+    } else {
+        Write-Host "Coverage: $CoveragePercent%" -ForegroundColor $(if ($CoveragePercent -ge 80) { 'Green' } elseif ($CoveragePercent -ge 60) { 'Yellow' } else { 'Red' })
+    }
 }
 
 Write-Host "`n======================================" -ForegroundColor Cyan
@@ -180,4 +188,3 @@ if ($TestResults.FailedCount -gt 0) {
     Write-Host "All tests PASSED" -ForegroundColor Green
     exit 0
 }
-

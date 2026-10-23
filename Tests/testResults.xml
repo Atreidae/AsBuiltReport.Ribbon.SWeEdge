@@ -1,250 +1,410 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="113" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="2" invalid="0" date="2026-10-23" time="14:44:59">
-  <environment user="atrei" user-domain="TSUKIYOMI" platform="Microsoft Windows 11 Pro|C:\WINDOWS|\Device\Harddisk0\Partition3" machine-name="TSUKIYOMI" os-version="10.0.26200" nunit-version="2.5.8.0" cwd="C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge" clr-version="10.0.13" />
-  <culture-info current-culture="en-AU" current-uiculture="en-US" />
-  <test-suite type="TestFixture" name="Pester" executed="True" result="Ignored" success="True" time="5.2379" asserts="0" description="Pester">
+<test-results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="nunit_schema_2.5.xsd" name="Pester" total="113" errors="0" failures="32" not-run="0" inconclusive="0" ignored="0" skipped="1" invalid="0" date="2026-10-23" time="03:52:29">
+  <environment clr-version="10.0.12" nunit-version="2.5.8.0" machine-name="runnervm8k3b6" os-version="6.17.0-1022-azure" user="runner" platform="Linux" cwd="/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge" user-domain="" />
+  <culture-info current-culture="" current-uiculture="" />
+  <test-suite type="TestFixture" name="Pester" executed="True" result="Failure" success="False" time="1.9498" asserts="0" description="Pester">
     <results>
-      <test-suite type="TestFixture" name="C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\Tests\AsBuiltReport.Ribbon.SWeEdge.Tests.ps1" executed="True" result="Ignored" success="True" time="2.9536" asserts="0" description="C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\Tests\AsBuiltReport.Ribbon.SWeEdge.Tests.ps1">
+      <test-suite type="TestFixture" name="/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Tests/AsBuiltReport.Ribbon.SWeEdge.Tests.ps1" executed="True" result="Failure" success="False" time="0.369" asserts="0" description="/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Tests/AsBuiltReport.Ribbon.SWeEdge.Tests.ps1">
         <results>
-          <test-suite type="TestFixture" name="Module Manifest" executed="True" result="Success" success="True" time="0.3809" asserts="0" description="Module Manifest">
+          <test-suite type="TestFixture" name="Module Manifest" executed="True" result="Failure" success="False" time="0" asserts="0" description="Module Manifest">
             <results>
-              <test-case description="is a valid manifest" name="Module Manifest.is a valid manifest" time="0.1003" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="is named AsBuiltReport.Ribbon.SWeEdge" name="Module Manifest.is named AsBuiltReport.Ribbon.SWeEdge" time="0.0671" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="requires AsBuiltReport.Core" name="Module Manifest.requires AsBuiltReport.Core" time="0.0093" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="exports only the Invoke-AsBuiltReport entry point" name="Module Manifest.exports only the Invoke-AsBuiltReport entry point" time="0.0086" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="is a valid manifest" name="Module Manifest.is a valid manifest" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="is named AsBuiltReport.Ribbon.SWeEdge" name="Module Manifest.is named AsBuiltReport.Ribbon.SWeEdge" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="requires AsBuiltReport.Core" name="Module Manifest.requires AsBuiltReport.Core" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="exports only the Invoke-AsBuiltReport entry point" name="Module Manifest.exports only the Invoke-AsBuiltReport entry point" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Module Structure" executed="True" result="Success" success="True" time="0.6513" asserts="0" description="Module Structure">
+          <test-suite type="TestFixture" name="Module Structure" executed="True" result="Failure" success="False" time="0" asserts="0" description="Module Structure">
             <results>
-              <test-case description="has an en-US language file" name="Module Structure.has an en-US language file" time="0.0051" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="names every private function file after a function it defines" name="Module Structure.names every private function file after a function it defines" time="0.232" asserts="0" success="True" result="Success" executed="True" />
-              <test-suite type="ParameterizedTest" name="Module Structure.has a &lt;_&gt; directory" executed="True" result="Success" success="True" time="0.0273" asserts="0" description="has a &lt;_&gt; directory">
+              <test-case description="has an en-US language file" name="Module Structure.has an en-US language file" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="names every private function file after a function it defines" name="Module Structure.names every private function file after a function it defines" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-suite type="ParameterizedTest" name="Module Structure.has a &lt;_&gt; directory" executed="True" result="Failure" success="False" time="0" asserts="0" description="has a &lt;_&gt; directory">
                 <results>
-                  <test-case description="has a Src\Public directory" name="Module Structure.has a Src\Public directory" time="0.0152" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a Src\Private directory" name="Module Structure.has a Src\Private directory" time="0.0068" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a Language\en-US directory" name="Module Structure.has a Language\en-US directory" time="0.0052" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a &lt;_&gt; directory" name="Module Structure.has a &lt;_&gt; directory()" time="0" asserts="0" success="False" result="Failure" executed="True">
+                    <failure>
+                      <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                      <stack-trace />
+                    </failure>
+                  </test-case>
+                  <test-case description="has a &lt;_&gt; directory" name="Module Structure.has a &lt;_&gt; directory()" time="0" asserts="0" success="False" result="Failure" executed="True">
+                    <failure>
+                      <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                      <stack-trace />
+                    </failure>
+                  </test-case>
+                  <test-case description="has a &lt;_&gt; directory" name="Module Structure.has a &lt;_&gt; directory()" time="0" asserts="0" success="False" result="Failure" executed="True">
+                    <failure>
+                      <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                      <stack-trace />
+                    </failure>
+                  </test-case>
                 </results>
               </test-suite>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Report Configuration" executed="True" result="Success" success="True" time="0.7077" asserts="0" description="Report Configuration">
+          <test-suite type="TestFixture" name="Report Configuration" executed="True" result="Failure" success="False" time="0" asserts="0" description="Report Configuration">
             <results>
-              <test-case description="declares the standard Report properties" name="Report Configuration.declares the standard Report properties" time="0.0092" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="has InfoLevel values within 0 to 5" name="Report Configuration.has InfoLevel values within 0 to 5" time="0.0382" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="declares the standard Report properties" name="Report Configuration.declares the standard Report properties" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="has InfoLevel values within 0 to 5" name="Report Configuration.has InfoLevel values within 0 to 5" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="ConvertFrom-AbrRibbonSequence" executed="True" result="Success" success="True" time="0.8129" asserts="0" description="ConvertFrom-AbrRibbonSequence">
+          <test-suite type="TestFixture" name="ConvertFrom-AbrRibbonSequence" executed="True" result="Failure" success="False" time="0" asserts="0" description="ConvertFrom-AbrRibbonSequence">
             <results>
-              <test-case description="returns an empty array for null or empty input" name="ConvertFrom-AbrRibbonSequence.returns an empty array for null or empty input" time="0.0239" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="decodes little-endian Int16 pairs" name="ConvertFrom-AbrRibbonSequence.decodes little-endian Int16 pairs" time="0.0287" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="decodes single bytes when ByteCount is 1" name="ConvertFrom-AbrRibbonSequence.decodes single bytes when ByteCount is 1" time="0.0091" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="discards zero padding" name="ConvertFrom-AbrRibbonSequence.discards zero padding" time="0.007" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="returns an empty array for malformed base64 rather than throwing" name="ConvertFrom-AbrRibbonSequence.returns an empty array for malformed base64 rather than throwing" time="0.0312" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="returns an empty array for null or empty input" name="ConvertFrom-AbrRibbonSequence.returns an empty array for null or empty input" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="decodes little-endian Int16 pairs" name="ConvertFrom-AbrRibbonSequence.decodes little-endian Int16 pairs" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="decodes single bytes when ByteCount is 1" name="ConvertFrom-AbrRibbonSequence.decodes single bytes when ByteCount is 1" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="discards zero padding" name="ConvertFrom-AbrRibbonSequence.discards zero padding" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="returns an empty array for malformed base64 rather than throwing" name="ConvertFrom-AbrRibbonSequence.returns an empty array for malformed base64 rather than throwing" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="ConvertFrom-AbrRibbonIeNode" executed="True" result="Success" success="True" time="0.8745" asserts="0" description="ConvertFrom-AbrRibbonIeNode">
+          <test-suite type="TestFixture" name="ConvertFrom-AbrRibbonIeNode" executed="True" result="Failure" success="False" time="0" asserts="0" description="ConvertFrom-AbrRibbonIeNode">
             <results>
-              <test-case description="skips rows with no classname" name="ConvertFrom-AbrRibbonIeNode.skips rows with no classname" time="0.0068" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="exposes the row identifier as an integer" name="ConvertFrom-AbrRibbonIeNode.exposes the row identifier as an integer" time="0.0133" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="exposes the class name" name="ConvertFrom-AbrRibbonIeNode.exposes the class name" time="0.0064" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="preserves every configuration field" name="ConvertFrom-AbrRibbonIeNode.preserves every configuration field" time="0.009" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="skips rows with no classname" name="ConvertFrom-AbrRibbonIeNode.skips rows with no classname" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="exposes the row identifier as an integer" name="ConvertFrom-AbrRibbonIeNode.exposes the row identifier as an integer" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="exposes the class name" name="ConvertFrom-AbrRibbonIeNode.exposes the class name" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="preserves every configuration field" name="ConvertFrom-AbrRibbonIeNode.preserves every configuration field" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Get-AbrRibbonOrderedRow" executed="True" result="Success" success="True" time="0.933" asserts="0" description="Get-AbrRibbonOrderedRow">
+          <test-suite type="TestFixture" name="Get-AbrRibbonOrderedRow" executed="True" result="Failure" success="False" time="0" asserts="0" description="Get-AbrRibbonOrderedRow">
             <results>
-              <test-case description="orders rows by the decoded sequence rather than by identifier" name="Get-AbrRibbonOrderedRow.orders rows by the decoded sequence rather than by identifier" time="0.0254" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="places rows missing from the sequence last" name="Get-AbrRibbonOrderedRow.places rows missing from the sequence last" time="0.0203" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="adds an ExecutionOrder property" name="Get-AbrRibbonOrderedRow.adds an ExecutionOrder property" time="0.0057" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="orders rows by the decoded sequence rather than by identifier" name="Get-AbrRibbonOrderedRow.orders rows by the decoded sequence rather than by identifier" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="places rows missing from the sequence last" name="Get-AbrRibbonOrderedRow.places rows missing from the sequence last" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="adds an ExecutionOrder property" name="Get-AbrRibbonOrderedRow.adds an ExecutionOrder property" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Resolve-AbrRibbonReference" executed="True" result="Success" success="True" time="0.9582" asserts="0" description="Resolve-AbrRibbonReference">
+          <test-suite type="TestFixture" name="Resolve-AbrRibbonReference" executed="True" result="Failure" success="False" time="0" asserts="0" description="Resolve-AbrRibbonReference">
             <results>
-              <test-case description="resolves a known identifier" name="Resolve-AbrRibbonReference.resolves a known identifier" time="0.0087" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="treats zero and empty as not configured" name="Resolve-AbrRibbonReference.treats zero and empty as not configured" time="0.0059" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="marks an unknown identifier as unresolved instead of guessing" name="Resolve-AbrRibbonReference.marks an unknown identifier as unresolved instead of guessing" time="0.0044" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="resolves a known identifier" name="Resolve-AbrRibbonReference.resolves a known identifier" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="treats zero and empty as not configured" name="Resolve-AbrRibbonReference.treats zero and empty as not configured" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="marks an unknown identifier as unresolved instead of guessing" name="Resolve-AbrRibbonReference.marks an unknown identifier as unresolved instead of guessing" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Import-AbrRibbonSWeEdgeConfig" executed="True" result="Ignored" success="True" time="1.3518" asserts="0" description="Import-AbrRibbonSWeEdgeConfig">
+          <test-suite type="TestFixture" name="Import-AbrRibbonSWeEdgeConfig" executed="True" result="Failure" success="False" time="0" asserts="0" description="Import-AbrRibbonSWeEdgeConfig">
             <results>
-              <test-case description="throws for a missing file" name="Import-AbrRibbonSWeEdgeConfig.throws for a missing file" time="0.0314" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="throws for an unsupported file type" name="Import-AbrRibbonSWeEdgeConfig.throws for an unsupported file type" time="0.0166" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="imports an XML export" name="Import-AbrRibbonSWeEdgeConfig.imports an XML export" time="0.0046" asserts="0" success="False" result="Ignored" executed="False" />
-              <test-case description="imports a TAR export" name="Import-AbrRibbonSWeEdgeConfig.imports a TAR export" time="0.1202" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="preserves signaling group cross-references" name="Import-AbrRibbonSWeEdgeConfig.preserves signaling group cross-references" time="0.0845" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="orders route entries by execution order" name="Import-AbrRibbonSWeEdgeConfig.orders route entries by execution order" time="0.1279" asserts="0" success="False" result="Ignored" executed="False" />
+              <test-case description="throws for a missing file" name="Import-AbrRibbonSWeEdgeConfig.throws for a missing file" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="throws for an unsupported file type" name="Import-AbrRibbonSWeEdgeConfig.throws for an unsupported file type" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="imports an XML export" name="Import-AbrRibbonSWeEdgeConfig.imports an XML export" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="imports a TAR export" name="Import-AbrRibbonSWeEdgeConfig.imports a TAR export" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="preserves signaling group cross-references" name="Import-AbrRibbonSWeEdgeConfig.preserves signaling group cross-references" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
+              <test-case description="orders route entries by execution order" name="Import-AbrRibbonSWeEdgeConfig.orders route entries by execution order" time="0" asserts="0" success="False" result="Failure" executed="True">
+                <failure>
+                  <message>This test should run but it did not. Most likely a setup in some parent block failed.</message>
+                  <stack-trace />
+                </failure>
+              </test-case>
             </results>
           </test-suite>
         </results>
       </test-suite>
-      <test-suite type="TestFixture" name="C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\Tests\LocalizationData.Tests.ps1" executed="True" result="Success" success="True" time="0.4274" asserts="0" description="C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\Tests\LocalizationData.Tests.ps1">
+      <test-suite type="TestFixture" name="/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Tests/LocalizationData.Tests.ps1" executed="True" result="Success" success="True" time="0.4367" asserts="0" description="/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Tests/LocalizationData.Tests.ps1">
         <results>
-          <test-suite type="TestFixture" name="Language files" executed="True" result="Success" success="True" time="0.0392" asserts="0" description="Language files">
+          <test-suite type="TestFixture" name="Language files" executed="True" result="Success" success="True" time="0.0976" asserts="0" description="Language files">
             <results>
-              <test-case description="provides the default en-US culture" name="Language files.provides the default en-US culture" time="0.0081" asserts="0" success="True" result="Success" executed="True" />
-              <test-suite type="ParameterizedTest" name="Language files.loads the &lt;_&gt; language file" executed="True" result="Success" success="True" time="0.0149" asserts="0" description="loads the &lt;_&gt; language file">
+              <test-case description="provides the default en-US culture" name="Language files.provides the default en-US culture" time="0.0577" asserts="0" success="True" result="Success" executed="True" />
+              <test-suite type="ParameterizedTest" name="Language files.loads the &lt;_&gt; language file" executed="True" result="Success" success="True" time="0.0172" asserts="0" description="loads the &lt;_&gt; language file">
                 <results>
-                  <test-case description="loads the en-US language file" name="Language files.loads the en-US language file" time="0.0149" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="loads the en-US language file" name="Language files.loads the en-US language file" time="0.0172" asserts="0" success="True" result="Success" executed="True" />
                 </results>
               </test-suite>
-              <test-suite type="ParameterizedTest" name="Language files.declares the culture comment in &lt;_&gt;" executed="True" result="Success" success="True" time="0.0096" asserts="0" description="declares the culture comment in &lt;_&gt;">
+              <test-suite type="ParameterizedTest" name="Language files.declares the culture comment in &lt;_&gt;" executed="True" result="Success" success="True" time="0.0093" asserts="0" description="declares the culture comment in &lt;_&gt;">
                 <results>
-                  <test-case description="declares the culture comment in en-US" name="Language files.declares the culture comment in en-US" time="0.0096" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="declares the culture comment in en-US" name="Language files.declares the culture comment in en-US" time="0.0093" asserts="0" success="True" result="Success" executed="True" />
                 </results>
               </test-suite>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Translation coverage" executed="True" result="Success" success="True" time="0.3036" asserts="0" description="Translation coverage">
+          <test-suite type="TestFixture" name="Translation coverage" executed="True" result="Success" success="True" time="0.3559" asserts="0" description="Translation coverage">
             <results>
-              <test-suite type="ParameterizedTest" name="Translation coverage.has a translation group for every function that scopes one" executed="True" result="Success" success="True" time="0.1171" asserts="0" description="has a translation group for every function that scopes one">
+              <test-suite type="ParameterizedTest" name="Translation coverage.has a translation group for every function that scopes one" executed="True" result="Success" success="True" time="0.1369" asserts="0" description="has a translation group for every function that scopes one">
                 <results>
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeCallRouting.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeCallRouting.ps1&quot;)" time="0.0212" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeEmergencyService.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeEmergencyService.ps1&quot;)" time="0.0075" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeFirewall.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeFirewall.ps1&quot;)" time="0.0081" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeLogging.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeLogging.ps1&quot;)" time="0.0072" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeMediaConfiguration.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeMediaConfiguration.ps1&quot;)" time="0.0077" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeNetworking.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeNetworking.ps1&quot;)" time="0.0069" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgePhysicalTelephonyPort.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgePhysicalTelephonyPort.ps1&quot;)" time="0.0059" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeSecurity.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeSecurity.ps1&quot;)" time="0.0076" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeSignalingGroup.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeSignalingGroup.ps1&quot;)" time="0.0068" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeSip.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeSip.ps1&quot;)" time="0.007" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeSystem.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeSystem.ps1&quot;)" time="0.007" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeTelephonyMapping.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeTelephonyMapping.ps1&quot;)" time="0.0068" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeTopology.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeTopology.ps1&quot;)" time="0.0055" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Get-AbrRibbonSWeEdgeUnreferenced.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Private\Get-AbrRibbonSWeEdgeUnreferenced.ps1&quot;)" time="0.0058" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;Invoke-AsBuiltReport.Ribbon.SWeEdge.ps1&quot;,&quot;C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\AsBuiltReport.Ribbon.SWeEdge\Src\Public\Invoke-AsBuiltReport.Ribbon.SWeEdge.ps1&quot;)" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeCallRouting.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeCallRouting.ps1&quot;)" time="0.0275" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeEmergencyService.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeEmergencyService.ps1&quot;)" time="0.0055" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeFirewall.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeFirewall.ps1&quot;)" time="0.0045" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeLogging.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeLogging.ps1&quot;)" time="0.0043" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeMediaConfiguration.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeMediaConfiguration.ps1&quot;)" time="0.0063" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeNetworking.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeNetworking.ps1&quot;)" time="0.0065" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgePhysicalTelephonyPort.ps1&quot;,&quot;Get-AbrRibbonSWeEdgePhysicalTelephonyPort.ps1&quot;)" time="0.0059" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeSecurity.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeSecurity.ps1&quot;)" time="0.0063" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeSignalingGroup.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeSignalingGroup.ps1&quot;)" time="0.0078" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeSip.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeSip.ps1&quot;)" time="0.0298" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeSystem.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeSystem.ps1&quot;)" time="0.007" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeTelephonyMapping.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeTelephonyMapping.ps1&quot;)" time="0.0064" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeTopology.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeTopology.ps1&quot;)" time="0.0064" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Private/Get-AbrRibbonSWeEdgeUnreferenced.ps1&quot;,&quot;Get-AbrRibbonSWeEdgeUnreferenced.ps1&quot;)" time="0.0064" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="has a translation group for every function that scopes one" name="Translation coverage.has a translation group for every function that scopes one(&quot;/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Src/Public/Invoke-AsBuiltReport.Ribbon.SWeEdge.ps1&quot;,&quot;Invoke-AsBuiltReport.Ribbon.SWeEdge.ps1&quot;)" time="0.0064" asserts="0" success="True" result="Success" executed="True" />
                 </results>
               </test-suite>
-              <test-suite type="ParameterizedTest" name="Translation coverage.references only keys that exist, in &lt;Name&gt;" executed="True" result="Success" success="True" time="0.1204" asserts="0" description="references only keys that exist, in &lt;Name&gt;">
+              <test-suite type="ParameterizedTest" name="Translation coverage.references only keys that exist, in &lt;Name&gt;" executed="True" result="Success" success="True" time="0.0997" asserts="0" description="references only keys that exist, in &lt;Name&gt;">
                 <results>
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeCallRouting.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeCallRouting.ps1" time="0.0129" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeEmergencyService.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeEmergencyService.ps1" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeFirewall.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeFirewall.ps1" time="0.0073" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeLogging.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeLogging.ps1" time="0.0096" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeMediaConfiguration.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeMediaConfiguration.ps1" time="0.0077" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeNetworking.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeNetworking.ps1" time="0.0078" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgePhysicalTelephonyPort.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgePhysicalTelephonyPort.ps1" time="0.0064" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeSecurity.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeSecurity.ps1" time="0.0089" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeSignalingGroup.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeSignalingGroup.ps1" time="0.0082" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeSip.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeSip.ps1" time="0.007" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeSystem.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeSystem.ps1" time="0.008" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeTelephonyMapping.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeTelephonyMapping.ps1" time="0.0088" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeTopology.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeTopology.ps1" time="0.0062" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeUnreferenced.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeUnreferenced.ps1" time="0.0068" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="references only keys that exist, in Invoke-AsBuiltReport.Ribbon.SWeEdge.ps1" name="Translation coverage.references only keys that exist, in Invoke-AsBuiltReport.Ribbon.SWeEdge.ps1" time="0.0088" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeCallRouting.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeCallRouting.ps1" time="0.0139" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeEmergencyService.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeEmergencyService.ps1" time="0.0072" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeFirewall.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeFirewall.ps1" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeLogging.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeLogging.ps1" time="0.0044" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeMediaConfiguration.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeMediaConfiguration.ps1" time="0.0074" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeNetworking.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeNetworking.ps1" time="0.0046" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgePhysicalTelephonyPort.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgePhysicalTelephonyPort.ps1" time="0.0051" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeSecurity.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeSecurity.ps1" time="0.0069" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeSignalingGroup.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeSignalingGroup.ps1" time="0.0066" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeSip.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeSip.ps1" time="0.0062" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeSystem.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeSystem.ps1" time="0.0069" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeTelephonyMapping.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeTelephonyMapping.ps1" time="0.0065" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeTopology.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeTopology.ps1" time="0.0058" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Get-AbrRibbonSWeEdgeUnreferenced.ps1" name="Translation coverage.references only keys that exist, in Get-AbrRibbonSWeEdgeUnreferenced.ps1" time="0.0057" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="references only keys that exist, in Invoke-AsBuiltReport.Ribbon.SWeEdge.ps1" name="Translation coverage.references only keys that exist, in Invoke-AsBuiltReport.Ribbon.SWeEdge.ps1" time="0.0063" asserts="0" success="True" result="Success" executed="True" />
                 </results>
               </test-suite>
             </results>
           </test-suite>
         </results>
       </test-suite>
-      <test-suite type="TestFixture" name="C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\Tests\Resolver.Tests.ps1" executed="True" result="Success" success="True" time="1.8569" asserts="0" description="C:\ucmadscientist\AsBuiltReport.Ribbon.SWeEdge\Tests\Resolver.Tests.ps1">
+      <test-suite type="TestFixture" name="/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Tests/Resolver.Tests.ps1" executed="True" result="Ignored" success="True" time="1.1441" asserts="0" description="/home/runner/work/AsBuiltReport.Ribbon.SWeEdge/AsBuiltReport.Ribbon.SWeEdge/Tests/Resolver.Tests.ps1">
         <results>
-          <test-suite type="TestFixture" name="ConvertTo-AbrRibbonAddressText" executed="True" result="Success" success="True" time="0.0326" asserts="0" description="ConvertTo-AbrRibbonAddressText">
+          <test-suite type="TestFixture" name="ConvertTo-AbrRibbonAddressText" executed="True" result="Success" success="True" time="0.0375" asserts="0" description="ConvertTo-AbrRibbonAddressText">
             <results>
               <test-case description="returns a real address unchanged" name="ConvertTo-AbrRibbonAddressText.returns a real address unchanged" time="0.0043" asserts="0" success="True" result="Success" executed="True" />
-              <test-suite type="ParameterizedTest" name="ConvertTo-AbrRibbonAddressText.treats &lt;_&gt; as not configured" executed="True" result="Success" success="True" time="0.0229" asserts="0" description="treats &lt;_&gt; as not configured">
+              <test-suite type="ParameterizedTest" name="ConvertTo-AbrRibbonAddressText.treats &lt;_&gt; as not configured" executed="True" result="Success" success="True" time="0.0299" asserts="0" description="treats &lt;_&gt; as not configured">
                 <results>
-                  <test-case description="treats  as not configured" name="ConvertTo-AbrRibbonAddressText.treats  as not configured" time="0.0119" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="treats   as not configured" name="ConvertTo-AbrRibbonAddressText.treats   as not configured" time="0.0036" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="treats 0.0.0.0 as not configured" name="ConvertTo-AbrRibbonAddressText.treats 0.0.0.0 as not configured" time="0.0038" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="treats :: as not configured" name="ConvertTo-AbrRibbonAddressText.treats :: as not configured" time="0.0036" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="treats  as not configured" name="ConvertTo-AbrRibbonAddressText.treats  as not configured" time="0.0172" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="treats   as not configured" name="ConvertTo-AbrRibbonAddressText.treats   as not configured" time="0.0044" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="treats 0.0.0.0 as not configured" name="ConvertTo-AbrRibbonAddressText.treats 0.0.0.0 as not configured" time="0.0042" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="treats :: as not configured" name="ConvertTo-AbrRibbonAddressText.treats :: as not configured" time="0.0041" asserts="0" success="True" result="Success" executed="True" />
                 </results>
               </test-suite>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="ConvertTo-AbrRibbonTransformField" executed="True" result="Success" success="True" time="0.0687" asserts="0" description="ConvertTo-AbrRibbonTransformField">
+          <test-suite type="TestFixture" name="ConvertTo-AbrRibbonTransformField" executed="True" result="Success" success="True" time="0.092" asserts="0" description="ConvertTo-AbrRibbonTransformField">
             <results>
-              <test-case description="marks an unrecognised field rather than blanking it" name="ConvertTo-AbrRibbonTransformField.marks an unrecognised field rather than blanking it" time="0.0043" asserts="0" success="True" result="Success" executed="True" />
-              <test-suite type="ParameterizedTest" name="ConvertTo-AbrRibbonTransformField.names field &lt;Value&gt; as &lt;Expected&gt;" executed="True" result="Success" success="True" time="0.0269" asserts="0" description="names field &lt;Value&gt; as &lt;Expected&gt;">
+              <test-case description="marks an unrecognised field rather than blanking it" name="ConvertTo-AbrRibbonTransformField.marks an unrecognised field rather than blanking it" time="0.0052" asserts="0" success="True" result="Success" executed="True" />
+              <test-suite type="ParameterizedTest" name="ConvertTo-AbrRibbonTransformField.names field &lt;Value&gt; as &lt;Expected&gt;" executed="True" result="Success" success="True" time="0.0462" asserts="0" description="names field &lt;Value&gt; as &lt;Expected&gt;">
                 <results>
-                  <test-case description="names field 0 as Called Address/Number" name="ConvertTo-AbrRibbonTransformField.names field 0 as Called Address/Number" time="0.0081" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="names field 3 as Calling Address/Number" name="ConvertTo-AbrRibbonTransformField.names field 3 as Calling Address/Number" time="0.006" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="names field 10 as Redirecting Number" name="ConvertTo-AbrRibbonTransformField.names field 10 as Redirecting Number" time="0.004" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="names field 14 as User Value 1" name="ConvertTo-AbrRibbonTransformField.names field 14 as User Value 1" time="0.005" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="names field 27 as SG User Value 1" name="ConvertTo-AbrRibbonTransformField.names field 27 as SG User Value 1" time="0.0038" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="names field 0 as Called Address/Number" name="ConvertTo-AbrRibbonTransformField.names field 0 as Called Address/Number" time="0.0094" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="names field 3 as Calling Address/Number" name="ConvertTo-AbrRibbonTransformField.names field 3 as Calling Address/Number" time="0.0058" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="names field 10 as Redirecting Number" name="ConvertTo-AbrRibbonTransformField.names field 10 as Redirecting Number" time="0.006" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="names field 14 as User Value 1" name="ConvertTo-AbrRibbonTransformField.names field 14 as User Value 1" time="0.0198" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="names field 27 as SG User Value 1" name="ConvertTo-AbrRibbonTransformField.names field 27 as SG User Value 1" time="0.0052" asserts="0" success="True" result="Success" executed="True" />
                 </results>
               </test-suite>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Resolve-AbrRibbonNetworkInterface" executed="True" result="Success" success="True" time="0.129" asserts="0" description="Resolve-AbrRibbonNetworkInterface">
+          <test-suite type="TestFixture" name="Resolve-AbrRibbonNetworkInterface" executed="True" result="Success" success="True" time="0.172" asserts="0" description="Resolve-AbrRibbonNetworkInterface">
             <results>
-              <test-case description="derives the port name from the VLAN description rather than a hardcoded table" name="Resolve-AbrRibbonNetworkInterface.derives the port name from the VLAN description rather than a hardcoded table" time="0.009" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="labels fixed system interfaces" name="Resolve-AbrRibbonNetworkInterface.labels fixed system interfaces" time="0.0073" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="exposes the VLAN tag" name="Resolve-AbrRibbonNetworkInterface.exposes the VLAN tag" time="0.0057" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="keys the lookup by the forms a signaling group uses" name="Resolve-AbrRibbonNetworkInterface.keys the lookup by the forms a signaling group uses" time="0.0115" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="derives the port name from the VLAN description rather than a hardcoded table" name="Resolve-AbrRibbonNetworkInterface.derives the port name from the VLAN description rather than a hardcoded table" time="0.0071" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="labels fixed system interfaces" name="Resolve-AbrRibbonNetworkInterface.labels fixed system interfaces" time="0.0057" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="exposes the VLAN tag" name="Resolve-AbrRibbonNetworkInterface.exposes the VLAN tag" time="0.0045" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="keys the lookup by the forms a signaling group uses" name="Resolve-AbrRibbonNetworkInterface.keys the lookup by the forms a signaling group uses" time="0.0157" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Resolve-AbrRibbonEmergencyService" executed="True" result="Success" success="True" time="0.1874" asserts="0" description="Resolve-AbrRibbonEmergencyService">
+          <test-suite type="TestFixture" name="Resolve-AbrRibbonEmergencyService" executed="True" result="Success" success="True" time="0.2398" asserts="0" description="Resolve-AbrRibbonEmergencyService">
             <results>
-              <test-case description="reads the singleton configuration that has no ID wrapper" name="Resolve-AbrRibbonEmergencyService.reads the singleton configuration that has no ID wrapper" time="0.0075" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="splits a multi entry callback list" name="Resolve-AbrRibbonEmergencyService.splits a multi entry callback list" time="0.0076" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="splits a single entry callback list without returning characters" name="Resolve-AbrRibbonEmergencyService.splits a single entry callback list without returning characters" time="0.0134" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="never carries the notification manager secret" name="Resolve-AbrRibbonEmergencyService.never carries the notification manager secret" time="0.0127" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="reads the singleton configuration that has no ID wrapper" name="Resolve-AbrRibbonEmergencyService.reads the singleton configuration that has no ID wrapper" time="0.0051" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="splits a multi entry callback list" name="Resolve-AbrRibbonEmergencyService.splits a multi entry callback list" time="0.0057" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="splits a single entry callback list without returning characters" name="Resolve-AbrRibbonEmergencyService.splits a single entry callback list without returning characters" time="0.017" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="never carries the notification manager secret" name="Resolve-AbrRibbonEmergencyService.never carries the notification manager secret" time="0.0126" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Resolve-AbrRibbonLogging" executed="True" result="Success" success="True" time="0.2446" asserts="0" description="Resolve-AbrRibbonLogging">
+          <test-suite type="TestFixture" name="Resolve-AbrRibbonLogging" executed="True" result="Success" success="True" time="0.337" asserts="0" description="Resolve-AbrRibbonLogging">
             <results>
-              <test-case description="names the syslog level and facility" name="Resolve-AbrRibbonLogging.names the syslog level and facility" time="0.0093" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="never carries the SNMP community string" name="Resolve-AbrRibbonLogging.never carries the SNMP community string" time="0.0094" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="collapses a subsystem that has the same level on every destination" name="Resolve-AbrRibbonLogging.collapses a subsystem that has the same level on every destination" time="0.0059" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="flags a subsystem left at Debug" name="Resolve-AbrRibbonLogging.flags a subsystem left at Debug" time="0.0057" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="names the syslog level and facility" name="Resolve-AbrRibbonLogging.names the syslog level and facility" time="0.0089" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="never carries the SNMP community string" name="Resolve-AbrRibbonLogging.never carries the SNMP community string" time="0.0155" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="collapses a subsystem that has the same level on every destination" name="Resolve-AbrRibbonLogging.collapses a subsystem that has the same level on every destination" time="0.0049" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="flags a subsystem left at Debug" name="Resolve-AbrRibbonLogging.flags a subsystem left at Debug" time="0.0048" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Test-AbrRibbonUnresolvedReference" executed="True" result="Success" success="True" time="0.2783" asserts="0" description="Test-AbrRibbonUnresolvedReference">
+          <test-suite type="TestFixture" name="Test-AbrRibbonUnresolvedReference" executed="True" result="Success" success="True" time="0.3604" asserts="0" description="Test-AbrRibbonUnresolvedReference">
             <results>
-              <test-case description="reports an identifier that did not resolve" name="Test-AbrRibbonUnresolvedReference.reports an identifier that did not resolve" time="0.0074" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="reports an interface key that did not resolve" name="Test-AbrRibbonUnresolvedReference.reports an interface key that did not resolve" time="0.0044" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="does not report values that resolved, or the not-set placeholders" name="Test-AbrRibbonUnresolvedReference.does not report values that resolved, or the not-set placeholders" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="reports a set where only one value is unresolved" name="Test-AbrRibbonUnresolvedReference.reports a set where only one value is unresolved" time="0.0046" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="does not report an empty set" name="Test-AbrRibbonUnresolvedReference.does not report an empty set" time="0.0045" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="reports an identifier that did not resolve" name="Test-AbrRibbonUnresolvedReference.reports an identifier that did not resolve" time="0.0053" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="reports an interface key that did not resolve" name="Test-AbrRibbonUnresolvedReference.reports an interface key that did not resolve" time="0.0036" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="does not report values that resolved, or the not-set placeholders" name="Test-AbrRibbonUnresolvedReference.does not report values that resolved, or the not-set placeholders" time="0.0046" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="reports a set where only one value is unresolved" name="Test-AbrRibbonUnresolvedReference.reports a set where only one value is unresolved" time="0.0037" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="does not report an empty set" name="Test-AbrRibbonUnresolvedReference.does not report an empty set" time="0.0035" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Resolve-AbrRibbonSignalingGroup health check data" executed="True" result="Success" success="True" time="0.4145" asserts="0" description="Resolve-AbrRibbonSignalingGroup health check data">
+          <test-suite type="TestFixture" name="Resolve-AbrRibbonSignalingGroup health check data" executed="True" result="Success" success="True" time="0.7358" asserts="0" description="Resolve-AbrRibbonSignalingGroup health check data">
             <results>
-              <test-case description="does not flag a group whose references all resolve" name="Resolve-AbrRibbonSignalingGroup health check data.does not flag a group whose references all resolve" time="0.0184" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="flags a group pointing at a route table that no longer exists" name="Resolve-AbrRibbonSignalingGroup health check data.flags a group pointing at a route table that no longer exists" time="0.0064" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="reports admin state from customAdminState, including Drain" name="Resolve-AbrRibbonSignalingGroup health check data.reports admin state from customAdminState, including Drain" time="0.0091" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="does not flag a disabled group as having a broken reference" name="Resolve-AbrRibbonSignalingGroup health check data.does not flag a disabled group as having a broken reference" time="0.0055" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="does not flag a group whose references all resolve" name="Resolve-AbrRibbonSignalingGroup health check data.does not flag a group whose references all resolve" time="0.0056" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="flags a group pointing at a route table that no longer exists" name="Resolve-AbrRibbonSignalingGroup health check data.flags a group pointing at a route table that no longer exists" time="0.0047" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="reports admin state from customAdminState, including Drain" name="Resolve-AbrRibbonSignalingGroup health check data.reports admin state from customAdminState, including Drain" time="0.0067" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="does not flag a disabled group as having a broken reference" name="Resolve-AbrRibbonSignalingGroup health check data.does not flag a disabled group as having a broken reference" time="0.0036" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Resolve-AbrRibbonCallRoute health check data" executed="True" result="Success" success="True" time="0.4594" asserts="0" description="Resolve-AbrRibbonCallRoute health check data">
+          <test-suite type="TestFixture" name="Resolve-AbrRibbonCallRoute health check data" executed="True" result="Success" success="True" time="0.7924" asserts="0" description="Resolve-AbrRibbonCallRoute health check data">
             <results>
-              <test-case description="does not flag a route whose references all resolve" name="Resolve-AbrRibbonCallRoute health check data.does not flag a route whose references all resolve" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="reports the enabled state of each route entry" name="Resolve-AbrRibbonCallRoute health check data.reports the enabled state of each route entry" time="0.0071" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="flags a route pointing at a signaling group that no longer exists" name="Resolve-AbrRibbonCallRoute health check data.flags a route pointing at a signaling group that no longer exists" time="0.0056" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="does not flag a Deny route, which has no destination by design" name="Resolve-AbrRibbonCallRoute health check data.does not flag a Deny route, which has no destination by design" time="0.0062" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="does not flag a route whose references all resolve" name="Resolve-AbrRibbonCallRoute health check data.does not flag a route whose references all resolve" time="0.0047" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="reports the enabled state of each route entry" name="Resolve-AbrRibbonCallRoute health check data.reports the enabled state of each route entry" time="0.0054" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="flags a route pointing at a signaling group that no longer exists" name="Resolve-AbrRibbonCallRoute health check data.flags a route pointing at a signaling group that no longer exists" time="0.0035" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="does not flag a Deny route, which has no destination by design" name="Resolve-AbrRibbonCallRoute health check data.does not flag a Deny route, which has no destination by design" time="0.0046" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Find-AbrRibbonProvider" executed="True" result="Success" success="True" time="0.5134" asserts="0" description="Find-AbrRibbonProvider">
+          <test-suite type="TestFixture" name="Find-AbrRibbonProvider" executed="True" result="Success" success="True" time="0.8391" asserts="0" description="Find-AbrRibbonProvider">
             <results>
-              <test-suite type="ParameterizedTest" name="Find-AbrRibbonProvider.recognises &lt;Address&gt; as Teams Direct Routing" executed="True" result="Success" success="True" time="0.0344" asserts="0" description="recognises &lt;Address&gt; as Teams Direct Routing">
+              <test-suite type="ParameterizedTest" name="Find-AbrRibbonProvider.recognises &lt;Address&gt; as Teams Direct Routing" executed="True" result="Success" success="True" time="0.0258" asserts="0" description="recognises &lt;Address&gt; as Teams Direct Routing">
                 <results>
-                  <test-case description="recognises sip.pstnhub.microsoft.com as Teams Direct Routing" name="Find-AbrRibbonProvider.recognises sip.pstnhub.microsoft.com as Teams Direct Routing" time="0.0198" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="recognises SIP3.PSTNHUB.MICROSOFT.COM. as Teams Direct Routing" name="Find-AbrRibbonProvider.recognises SIP3.PSTNHUB.MICROSOFT.COM. as Teams Direct Routing" time="0.0054" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="recognises sip-du-a-au.pstnhub.microsoft.com as Teams Direct Routing" name="Find-AbrRibbonProvider.recognises sip-du-a-au.pstnhub.microsoft.com as Teams Direct Routing" time="0.0092" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="recognises sip.pstnhub.microsoft.com as Teams Direct Routing" name="Find-AbrRibbonProvider.recognises sip.pstnhub.microsoft.com as Teams Direct Routing" time="0.0146" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="recognises SIP3.PSTNHUB.MICROSOFT.COM. as Teams Direct Routing" name="Find-AbrRibbonProvider.recognises SIP3.PSTNHUB.MICROSOFT.COM. as Teams Direct Routing" time="0.0042" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="recognises sip-du-a-au.pstnhub.microsoft.com as Teams Direct Routing" name="Find-AbrRibbonProvider.recognises sip-du-a-au.pstnhub.microsoft.com as Teams Direct Routing" time="0.007" asserts="0" success="True" result="Success" executed="True" />
                 </results>
               </test-suite>
-              <test-suite type="ParameterizedTest" name="Find-AbrRibbonProvider.does not claim a host that only resembles a provider endpoint" executed="True" result="Success" success="True" time="0.0142" asserts="0" description="does not claim a host that only resembles a provider endpoint">
+              <test-suite type="ParameterizedTest" name="Find-AbrRibbonProvider.does not claim a host that only resembles a provider endpoint" executed="True" result="Success" success="True" time="0.0177" asserts="0" description="does not claim a host that only resembles a provider endpoint">
                 <results>
                   <test-case description="does not claim a host that only resembles a provider endpoint" name="Find-AbrRibbonProvider.does not claim a host that only resembles a provider endpoint(&quot;sip.notpstnhub.microsoft.com&quot;)" time="0.0061" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="does not claim a host that only resembles a provider endpoint" name="Find-AbrRibbonProvider.does not claim a host that only resembles a provider endpoint(&quot;pstnhub.microsoft.com.example.net&quot;)" time="0.0041" asserts="0" success="True" result="Success" executed="True" />
-                  <test-case description="does not claim a host that only resembles a provider endpoint" name="Find-AbrRibbonProvider.does not claim a host that only resembles a provider endpoint(&quot;&quot;)" time="0.004" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="does not claim a host that only resembles a provider endpoint" name="Find-AbrRibbonProvider.does not claim a host that only resembles a provider endpoint(&quot;pstnhub.microsoft.com.example.net&quot;)" time="0.0083" asserts="0" success="True" result="Success" executed="True" />
+                  <test-case description="does not claim a host that only resembles a provider endpoint" name="Find-AbrRibbonProvider.does not claim a host that only resembles a provider endpoint(&quot;&quot;)" time="0.0034" asserts="0" success="True" result="Success" executed="True" />
                 </results>
               </test-suite>
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="Resolve-AbrRibbonTopology" executed="True" result="Success" success="True" time="0.6474" asserts="0" description="Resolve-AbrRibbonTopology">
+          <test-suite type="TestFixture" name="Resolve-AbrRibbonTopology" executed="True" result="Success" success="True" time="1.0073" asserts="0" description="Resolve-AbrRibbonTopology">
             <results>
-              <test-case description="collapses every host of one provider into a single far end" name="Resolve-AbrRibbonTopology.collapses every host of one provider into a single far end" time="0.0123" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="does not draw the unspecified address as a peer" name="Resolve-AbrRibbonTopology.does not draw the unspecified address as a peer" time="0.0072" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="carries group state through so a drained group can be told apart" name="Resolve-AbrRibbonTopology.carries group state through so a drained group can be told apart" time="0.0082" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="reports a peer that is not a known provider by address and transport" name="Resolve-AbrRibbonTopology.reports a peer that is not a known provider by address and transport" time="0.0078" asserts="0" success="True" result="Success" executed="True" />
-              <test-case description="attaches a telephony group to its physical port rather than a peer" name="Resolve-AbrRibbonTopology.attaches a telephony group to its physical port rather than a peer" time="0.0049" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="collapses every host of one provider into a single far end" name="Resolve-AbrRibbonTopology.collapses every host of one provider into a single far end" time="0.0109" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="does not draw the unspecified address as a peer" name="Resolve-AbrRibbonTopology.does not draw the unspecified address as a peer" time="0.0049" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="carries group state through so a drained group can be told apart" name="Resolve-AbrRibbonTopology.carries group state through so a drained group can be told apart" time="0.0203" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="reports a peer that is not a known provider by address and transport" name="Resolve-AbrRibbonTopology.reports a peer that is not a known provider by address and transport" time="0.008" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="attaches a telephony group to its physical port rather than a peer" name="Resolve-AbrRibbonTopology.attaches a telephony group to its physical port rather than a peer" time="0.004" asserts="0" success="True" result="Success" executed="True" />
             </results>
           </test-suite>
-          <test-suite type="TestFixture" name="New-AbrRibbonTopologyDiagram" executed="True" result="Success" success="True" time="1.4018" asserts="0" description="New-AbrRibbonTopologyDiagram">
+          <test-suite type="TestFixture" name="New-AbrRibbonTopologyDiagram" executed="True" result="Ignored" success="True" time="1.0144" asserts="0" description="New-AbrRibbonTopologyDiagram">
             <results>
-              <test-case description="draws the appliance, the group, its far ends and one summary node for the rest" name="New-AbrRibbonTopologyDiagram.draws the appliance, the group, its far ends and one summary node for the rest" time="0.0731" asserts="0" success="True" result="Success" executed="True" />
+              <test-case description="draws the appliance, the group, its far ends and one summary node for the rest" name="New-AbrRibbonTopologyDiagram.draws the appliance, the group, its far ends and one summary node for the rest" time="0.0045" asserts="0" success="False" result="Ignored" executed="False" />
             </results>
           </test-suite>
         </results>

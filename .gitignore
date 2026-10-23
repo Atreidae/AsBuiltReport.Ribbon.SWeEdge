@@ -58,3 +58,5 @@ Dev/output/
 # Word and PDF exports, which may be rendered from a real configuration.
 *.docx
 *.pdf
+Tests/coverage.xml
+

@@ -1,0 +1,60 @@
+debug.log
+
+# NOTE: this file previously listed ".gitignore" itself. That meant the file was never
+# committed, so none of the exclusions below would reach a clone. Given Dev/ holds real
+# customer configuration exports, an uncommitted .gitignore is a disclosure risk, so the
+# self-exclusion has been removed deliberately.
+
+### PowerShell ###
+# Exclude packaged modules
+*.zip
+
+# Exclude .NET assemblies from source
+*.dll
+
+### vscode ###
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+*.code-workspace
+
+### copilot ###
+# Ignore the whole folder recursively. The previous pattern .copilot/*.* only matched files
+# directly inside .copilot, because a single asterisk does not cross a directory separator.
+# That left .copilot/output (generated reports and the saved AsBuilt config) tracked.
+.copilot/
+
+### development ###
+# Dev/ is published so contributors get the diagnostic and regression harnesses. It also
+# holds real customer configuration exports during development, so the exclusions below are
+# a safety boundary rather than housekeeping. Read them before adding anything to Dev.
+#
+# The rule is deny by default: every configuration export format is ignored wherever it
+# appears, and the sample folders are ignored outright. Publishing a sanitised sample is a
+# deliberate act requiring "git add -f", which is the intended friction.
+
+# Any configuration export, anywhere in the tree, whatever it is named.
+*.tar
+*.tgz
+*.tar.gz
+symphonyconfig.xml
+
+# Sample folders are ignored wholesale, so a newly created one is never tracked by accident.
+Dev/Private Samples/
+Dev/More Samples/
+Dev/Samples/
+
+# Documentation about the samples is safe to publish and is not caught by the rules above.
+# The configuration exports themselves stay blocked by the format rules at the top of this
+# section regardless of which folder they are in.
+!Dev/Samples/
+Dev/Samples/*
+!Dev/Samples/*.md
+
+# Generated report output from the harnesses.
+Dev/output/
+
+
+# Word and PDF exports, which may be rendered from a real configuration.
+*.docx
+*.pdf

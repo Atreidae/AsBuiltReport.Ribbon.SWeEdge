@@ -1,0 +1,60 @@
+{
+    "Report": {
+        "Name": "Ribbon SWeEdge As Built Report",
+        "Version": "1.0",
+        "Status": "Released",
+        "Language": "en-US",
+        "ShowCoverPageImage": true,
+        "ShowTableOfContents": true,
+        "ShowHeaderFooter": true,
+        "ShowTableCaptions": true
+    },
+    "Options": {
+        "_comment_": "ShowFirewallTable derives the network flows the appliance needs from its own configuration. Set to false to omit that section. ShowTopologyDiagram draws the trunk topology as a diagram. It needs the optional AsBuiltReport.Diagram module and is skipped with a warning when that is not installed. SkipCertificateCheck accepts the appliance certificate without validating it when collecting over REST, which most appliances need because they present a self signed certificate internally. Set to false where a trusted certificate is installed.",
+        "ShowFirewallTable": true,
+        "ShowTopologyDiagram": false,
+        "SkipCertificateCheck": true
+    },
+    "InfoLevel": {
+        "_comment_": "0 = Disabled, 1 = Enabled / Summary, 2 = Adv Summary, 3 = Detailed, 4 = Adv Detailed, 5 = Comprehensive",
+        "System": 1,
+        "Firewall": 1,
+        "Networking": 1,
+        "Security": 1,
+        "Media": 1,
+        "SIP": 1,
+        "PhysicalTelephonyPort": 1,
+        "SignalingGroup": 1,
+        "CallRouting": 1,
+        "TelephonyMapping": 1,
+        "EmergencyService": 1,
+        "Logging": 1
+    },
+    "HealthCheck": {
+        "System": {
+            "NtpEnabled": true
+        },
+        "Security": {
+            "CertificateExpiry": true,
+            "CertificateExpiryWarningDays": 60
+        },
+        "SignalingGroup": {
+            "UnresolvedReference": true,
+            "DisabledGroup": true,
+            "DrainState": true
+        },
+        "CallRouting": {
+            "UnresolvedReference": true,
+            "DisabledRoute": true
+        },
+        "Configuration": {
+            "UnreferencedObject": true
+        },
+        "Logging": {
+            "VerboseLogging": true
+        },
+        "SIP": {
+            "ConsistentTlsProfile": true
+        }
+    }
+}

@@ -84,9 +84,19 @@
     # directly may not, so a missing name simply falls back to the node name.
     $Source = if ($InputFile) {
         for ($Index = 0; $Index -lt @($InputFile).Count; $Index++) {
+            $Name = if ($Target -and $Index -lt @($Target).Count) { @($Target)[$Index] } else { '' }
+
+            # An existing file in Target means the export was supplied twice, or Target was
+            # filled with a path out of habit from before InputFile existed. A path makes a
+            # poor heading, so it is dropped and the node name is used instead.
+            if ($Name -and (Test-Path -LiteralPath $Name -PathType Leaf)) {
+                Write-PScriboMessage -IsWarning ($LocalizedData.TargetFileWithInputFile -f $Name)
+                $Name = ''
+            }
+
             [PSCustomObject]@{
                 Path        = @($InputFile)[$Index]
-                DisplayName = if ($Target -and $Index -lt @($Target).Count) { @($Target)[$Index] } else { '' }
+                DisplayName = $Name
                 IsFile      = $true
             }
         }

@@ -291,3 +291,54 @@ Describe 'Import-AbrRibbonSWeEdgeConfig' {
         $Orders | Should -Be @($Orders | Sort-Object)
     }
 }
+
+Describe 'Invoke-AsBuiltReport.Ribbon.SWeEdge input handling' {
+
+    BeforeAll {
+        # The entry point reads these from the caller's scope, as AsBuiltReport.Core provides
+        # them, and calls PScribo commands that are not loaded here, so both are stubbed.
+        $global:ReportConfig = [PSCustomObject]@{
+            Report      = [PSCustomObject]@{}
+            InfoLevel   = [PSCustomObject]@{}
+            Options     = [PSCustomObject]@{}
+            HealthCheck = [PSCustomObject]@{ Configuration = [PSCustomObject]@{} }
+        }
+        $global:reportTranslate = Import-LocalizedData -BaseDirectory (Join-Path $script:ModuleRoot 'Language') -FileName 'RibbonSWeEdge' -UICulture 'en-US'
+
+        foreach ($Name in 'Section', 'Write-ReportModuleInfo', 'Write-PScriboMessage') {
+            if (-not (Get-Command $Name -ErrorAction SilentlyContinue)) {
+                Set-Item -Path "function:global:$Name" -Value { }
+                $script:Stubbed += @($Name)
+            }
+        }
+
+        $script:ExportFile = Join-Path $TestDrive 'SBC_Config_NODE01.tar'
+        Set-Content -Path $script:ExportFile -Value 'placeholder'
+    }
+
+    AfterAll {
+        Remove-Variable -Name ReportConfig, reportTranslate -Scope Global -ErrorAction SilentlyContinue
+        foreach ($Name in $script:Stubbed) { Remove-Item -Path "function:global:$Name" -ErrorAction SilentlyContinue }
+    }
+
+    BeforeEach {
+        $Xml = [xml]'<Configuration><Token name="System"><Token name="SystemNet"><IE><NodeName>NODE01</NodeName></IE></Token></Token></Configuration>'
+        Mock -ModuleName AsBuiltReport.Ribbon.SWeEdge Import-AbrRibbonSWeEdgeConfig { [PSCustomObject]@{ RawXml = $Xml } }.GetNewClosure()
+        Mock -ModuleName AsBuiltReport.Ribbon.SWeEdge Write-PScriboMessage { }
+        Mock -ModuleName AsBuiltReport.Ribbon.SWeEdge Section { }
+    }
+
+    It 'ignores a file passed as Target alongside InputFile and uses the node name' {
+        Invoke-AsBuiltReport.Ribbon.SWeEdge -InputFile $script:ExportFile -Target $script:ExportFile
+
+        Should -Invoke -ModuleName AsBuiltReport.Ribbon.SWeEdge Write-PScriboMessage -ParameterFilter { $IsWarning -and $Message -like '*alongside -InputFile*' } -Times 1 -Exactly
+        Should -Invoke -ModuleName AsBuiltReport.Ribbon.SWeEdge Section -ParameterFilter { $Name -eq 'NODE01' } -Times 1 -Exactly
+    }
+
+    It 'uses Target as the display name when it is not a file' {
+        Invoke-AsBuiltReport.Ribbon.SWeEdge -InputFile $script:ExportFile -Target 'Sydney SBC'
+
+        Should -Invoke -ModuleName AsBuiltReport.Ribbon.SWeEdge Write-PScriboMessage -ParameterFilter { $IsWarning } -Times 0 -Exactly
+        Should -Invoke -ModuleName AsBuiltReport.Ribbon.SWeEdge Section -ParameterFilter { $Name -eq 'Sydney SBC' } -Times 1 -Exactly
+    }
+}

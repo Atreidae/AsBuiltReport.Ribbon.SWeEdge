@@ -3,6 +3,7 @@
     # Main module translations (Invoke-AsBuiltReport.Ribbon.SWeEdge)
     InvokeAsBuiltReportRibbonSWeEdge = ConvertFrom-StringData @'
         PwshRequired      = The ShowTopologyDiagram option needs PowerShell 7 or later, and this session is Windows PowerShell. Try using: pwsh -Command "{0}"
+        TargetFileWithInputFile = '{0}' was passed as a Target alongside -InputFile. With -InputFile, Target is only a display name, so the file path was ignored and the node name from the export will be used instead.
         TargetFileDeprecated = '{0}' was passed as a Target. Passing an export file through Target is deprecated, use -InputFile instead (AsBuiltReport.Core 1.7.0 or later).
         Importing         = Importing Ribbon SBC configuration from {0}.
         Collecting        = Collecting configuration from Ribbon SBC {0} over REST.

@@ -25,6 +25,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Passing an offline export file through `Target` is deprecated and now logs a warning. Use
   the native `-InputFile` parameter of `New-AsBuiltReport` (AsBuiltReport.Core 1.7.0 or later).
   `Target` still works for file paths and host names, so nothing breaks.
+- When `-InputFile` is used, a `Target` value that is an existing file is ignored with a warning
+  rather than used as the section heading. The node name from the export is used instead.
+
+### Fixed
+
+- Supplying the same export file to both `-InputFile` and `-Target` produced a section headed
+  with the file path.
 - Provider detection was moved into shared helpers (`Find-AbrRibbonProvider`) and is reused by
   the Firewall Requirements section. Behaviour is unchanged.
 

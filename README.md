@@ -311,7 +311,11 @@ here is this project's rather than his.
   them, but the rules inside them are not yet rendered. See [ROADMAP.md](ROADMAP.md).
 - The `-InputFile` parameter set requires AsBuiltReport.Core 1.7.0 or later. On earlier Core
   releases, pass the configuration export to `-Target` instead, which is supported on all
-  supported Core versions.
+  supported Core versions. At the time of writing 1.7.0 is unreleased, and its
+  `feature/inputfile-support` branch still demands `-Target` even with `-InputFile`.
+- With `-InputFile`, `Target` is only a display name for the section heading. If it names an
+  existing file, for example the same export given twice, it is ignored with a warning and the
+  node name from the export is used instead.
 - A configuration export taken with a password set cannot be read. The module extracts the
   archive directly and has no facility for supplying a password. Export without one, which is
   the recommended practice anyway: a password protected export carries material that should

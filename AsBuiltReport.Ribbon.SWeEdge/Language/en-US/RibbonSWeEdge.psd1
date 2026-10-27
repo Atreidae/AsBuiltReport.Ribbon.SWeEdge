@@ -101,14 +101,14 @@
         RelayPort        = Transport Relay Ports
 
         NatHeading       = Address Translation
-        NatInfo          = These signalling groups advertise a public address that differs from the address on the interface, which means the appliance sits behind a one to one translation. The firewall must translate the public address to the private address shown and must not alter the SIP or SDP payload while doing so.
+        NatInfo          = These signalling groups advertise a public address that differs from the address on the interface, which means the appliance sits behind a one to one NAT translation. The firewall or load balancer must translate the public address to the private address shown and must not alter the SIP or SDP payload while doing so. As such you may need to disable any SIP-ALG or SIP Helpers on the NAT appliance.
         NatTable         = Address Translation
         SignalingGroup   = Signalling Group
         PrivateAddress   = Private Address
         PublicAddress    = Public Address
 
         AclHeading       = Appliance Access Control List
-        AclInfo          = These rules are applied by the appliance itself and are separate from any upstream firewall. A flow permitted upstream will still fail if it is denied here. Rules are listed in the order the appliance evaluates them.
+        AclInfo          = These ACL rules are applied by the appliance itself and are separate from any upstream firewall. A flow permitted upstream will still fail if it is denied here. Rules are listed in the order the appliance evaluates them from top to bottom.
         AclTable         = Access Control Rules
         Action           = Action
         Interface        = Interface
@@ -124,15 +124,15 @@
     # Topology section translations (Get-AbrRibbonSWeEdgeTopology)
     GetAbrRibbonSWeEdgeTopology = ConvertFrom-StringData @'
         Collecting       = Collecting trunk topology information.
-        NotFound         = No signalling groups were found, so no topology diagram was drawn.
+        NotFound         = No Signalling Groups were found, so no topology diagram was drawn.
         UnsupportedHost   = The topology diagram was skipped because it needs PowerShell 7 or later. The diagram engine in AsBuiltReport.Diagram cannot load in Windows PowerShell 5.1. Run the report from pwsh to use the ShowTopologyDiagram option.
         ModuleMissing     = The topology diagram was skipped because the optional AsBuiltReport.Diagram module is not installed. Install it with Install-Module AsBuiltReport.Diagram to enable the ShowTopologyDiagram option.
-        RenderFailed     = The topology diagram for {0} could not be rendered and was skipped.
+        RenderFailed     = The topology diagram for {0} could not be rendered and was skipped. Please ensure you are running the report in PowerShell 7 or greater as this is a requirement for the AsBuiltReport.Diagram module.
         Error            = The topology diagram could not be created: {0}
 
         Heading          = Trunk Topology
-        SectionInfo      = The diagram shows this appliance, the network interface each signalling group uses, and the far ends each group talks to. Line style shows the transport: a solid line is TLS, a dashed line is TCP and a dotted line is UDP. A drained signalling group is shown in amber and a disabled one is greyed out. Peers belonging to a recognised service provider are drawn as that provider.
-        SplitInfo        = This appliance has too many signalling group connections ({0}) to read in one diagram, so it is drawn one interface at a time.
+        SectionInfo      = The diagram shows this appliance, the network interface each Signalling Group uses, and the far ends each group talks to. Line style shows the transport: a solid line is TLS, a dashed line is TCP and a dotted line is UDP. A drained signalling group is shown in amber and a disabled one is greyed out. Peers belonging to a recognised service provider are marked as that provider.
+        SplitInfo        = This appliance has too many Signalling Group connections ({0}) to read in one diagram, so it is drawn one interface at a time.
         AltText          = Trunk topology diagram for {0}
 '@
 
@@ -143,7 +143,7 @@
         NotFound         = No network interfaces were found in the configuration.
 
         Heading          = Networking
-        SectionInfo      = The following section details the network configuration of the SBC. Logical interfaces carry signalling and media traffic and are referenced by name from each signalling group. On SBC 1000 and 2000 appliances the physical ports are presented as VLAN sub-interfaces, so the friendly port name shown here is derived from the VLAN description held in the configuration.
+        SectionInfo      = The following section details the network configuration of the SBC. Logical interfaces carry signalling and media traffic and are referenced by name from each Signalling Group. On SBC 1000 and 2000 appliances the physical ports are presented as VLAN sub-interfaces, so the friendly port name shown here is derived from the VLAN description held in the configuration.
 
         InterfaceHeading = Logical Interfaces
         InterfaceTable   = Logical Interfaces
@@ -190,7 +190,7 @@
         NotFound         = No media configuration was found.
 
         Heading          = Media
-        SectionInfo      = The following section details how the SBC handles media such as audio or video. A media list defines which codecs are offered and in what order of preference, and is applied to a signalling group. The order matters, because the first codec that both ends support is the one used for the call. Note: There are some cases where the SBC will select a codec that is less desirable than the first codec to save compute resources should the SBC be using Dynamic-DSP mode instead of transcoding one wideband codec to another if a common narrowband codec is available.
+        SectionInfo      = The following section details how the SBC handles media such as audio or video. A media list defines which codecs are offered and in what order of preference, and is applied to a Signalling Group. The order matters, because the first codec that both ends support is the one used for the call. Note: There are some cases where the SBC will select a codec that is less desirable than the first codec to save compute resources should the SBC be using Dynamic-DSP mode instead of transcoding one wideband codec to another if a common narrowband codec is available.
 
         ListHeading      = Media Lists
         ListTable        = Media Lists
@@ -244,9 +244,9 @@
         NotFound         = No signaling groups were found in the configuration.
 
         Heading          = Signaling Groups
-        SectionInfo      = The following section details the signalling groups configured on the SBC. A signalling group represents a single trunk or endpoint relationship. It defines which far end the SBC will exchange SIP with, over which network interface, using which media list, and which call route table applies to calls arriving on it.
+        SectionInfo      = The following section details the signalling groups configured on the SBC. A Signalling Group represents a single trunk or endpoint relationship. It defines which far end the SBC will exchange SIP with, over which network interface, using which media list, and which call route table applies to calls arriving on it.
         Drain            = Drain
-        DrainInfo        = A group left in the Drain state is highlighted below. It still answers OPTIONS and so appears healthy to monitoring, but it rejects any call offered to it. Draining is a maintenance step, so a drained group in a finished build usually means it was never put back into service.
+        DrainInfo        = A group left in the Drain state is highlighted below. It still answers OPTIONS and so appears healthy to monitoring, but it rejects any call offered to it. Draining is a maintenance step, so a drained group in a finished build usually means it was never put back into service and should be checked.
         DisabledInfo     = A disabled group is highlighted below. It carries no calls and does not respond on its listen ports. This is usually deliberate, but it is also the common explanation for a trunk that appears fully configured and does not work.
         UnresolvedInfo   = A group highlighted as unresolved refers to an object that is not present in this configuration, such as a route table or media list that was deleted while the reference to it was left in place. The group will not behave the way the configuration reads. Note that the broken reference may be in a field that is not shown at the current detail level.
         RecorderInfo     = Signaling groups numbered 50000 and above are SIPREC recorders.
@@ -312,10 +312,10 @@
         NotFound         = No call routing tables were found in the configuration.
 
         Heading          = Call Routing
-        SectionInfo      = The following section details how the SBC routes calls. A call arriving on a signalling group is matched against that group's route table. Route entries are evaluated in the order shown until one matches, and each entry references a transformation table which both tests the call and rewrites its numbers.
-        OrderInfo        = Routes and rules are listed in the order the SBC evaluates them, which is not the same as identifier order.
-        DisabledRouteInfo = A disabled route is highlighted below. It is skipped during evaluation, so a call that appears to match it will fall through to the next route in the table, or fail if none follows.
-        UnresolvedInfo   = A route highlighted as unresolved refers to an object that is not present in this configuration, such as a destination signalling group or transformation table that was deleted while the reference to it was left in place. The route cannot send a call where it appears to send it.
+        SectionInfo      = The following section details how the SBC routes calls. A call arriving on a signalling group is matched against that group's route table. Route entries are evaluated in the order shown until one matches. Each route table entry references a Transformation Table for the call matching criteria.
+        OrderInfo        = Routes and rules are listed in the order the SBC evaluates them, from top to bottom. It should be noted this is not the same as the ID number, which is used by the internal routing engine and the REST API to reference objects.
+        DisabledRouteInfo = A disabled route is highlighted below. It is skipped during call route evaluation, so a call that appears to match it will fall through to the next route in the table, or fail if none follows.
+        UnresolvedInfo   = A route highlighted as unresolved refers to an object that is not present in this configuration, such as a destination signalling group or transformation table that was deleted while the reference to it was left in place. The route cannot send a call where it appears to send it, this should be investigated immediately.
 
         RouteHeading     = Route Tables
         RouteSummary     = Route Tables
@@ -341,7 +341,7 @@
         InputValue       = Input Value
         OutputField      = Output Field
         OutputValue      = Output Value
-        MatchInfo        = A table succeeds only when every enabled Mandatory rule matches. If an Optional rule exists for a certain match type (IE Calling Number) then it must match at least one Optional Rule for that match type. Any additional Optional rules that do not match will not fail the table.
+        MatchInfo        = A table succeeds only when every enabled Mandatory rule matches. If an Optional rule exists for a certain match type (IE Calling Number) then it must match at least one Optional Rule for that match type. Any additional Optional rules that do not match will not cause the table to fail selection.
 
         State            = State
         Enabled          = Enabled
@@ -394,7 +394,7 @@
 
         Heading          = Security
         SectionInfo      = The following section details the certificates presented by the SBC and the TLS profiles that govern encrypted signalling. An expired certificate takes a secure trunk out of service, so the remaining validity of each appliance certificate is shown. Days remaining is counted from the date this report was generated and will be out of date if the report is read later. Certificate content and private keys are never included in this report. The account policy at the end of this section governs who may sign in to the appliance, which is the other half of the security question.
-        ExpiryInfo       = A certificate that has already expired, or that expires within the warning period, has its entire row highlighted below. An expired appliance certificate takes every trunk that relies on it out of service, so these should be renewed before the dates shown.
+        ExpiryInfo       = A certificate that has already expired, or that expires within the warning period, has its entire row highlighted below. An expired AsBuiltReport.Diagram appliance certificate takes every Signalling Group or trunk that relies on it out of service, so these should be renewed before the dates shown.
 
         PolicyHeading     = Account Policy
         PasswordTable     = Password Policy
@@ -490,7 +490,7 @@
         NotFound         = No SIP configuration was found.
 
         Heading          = SIP
-        SectionInfo      = The following section details the SIP server tables and profiles. A server table lists the far end servers for a trunk, and the SBC attempts them in the order shown. A SIP profile controls how the SBC formats and times SIP messages toward that trunk.
+        SectionInfo      = The following section details the SIP Server Tables and SIP Profiles. A SIP Server Table lists the far end servers for a trunk, and the SBC attempts them in the order shown. A SIP Profile controls how the SBC formats and times SIP messages toward that trunk.
         OrderInfo        = Servers are listed in the order the SBC attempts them when using round robin or first routing.
 
         ServerHeading    = SIP Server Tables
@@ -534,7 +534,7 @@
 
         Heading          = Logging and Monitoring
         SectionInfo      = The following section details where the SBC sends its logs and which management systems may poll it. SNMP community strings are not included in this report due to their sensitive nature.
-        VerboseInfo      = A syslog destination or subsystem left at Trace or Debug generates significant load and disk usage, and is highlighted below. Verbose logging is a troubleshooting step, so finding it in a finished build usually means it was never turned back down.
+        VerboseInfo      = A syslog destination or subsystem left at Trace or Debug generates significant load and disk usage, and is highlighted below. Verbose logging is a troubleshooting step, so finding it in a finished build usually means it was never turned back down and should be checked.
 
         SyslogHeading    = Syslog Destinations
         SyslogTable      = Syslog Destinations
@@ -568,7 +568,7 @@
         NotFound         = No physical telephony ports are present on this platform.
 
         Heading          = Physical Telephony Ports
-        SectionInfo      = The following section details the physical telephony ports fitted to the SBC. Digital ports carry ISDN or CAS signalling and are referenced by signalling groups, while analog ports provide FXS and FXO connections for handsets, paging equipment and legacy devices.
+        SectionInfo      = The following section details the physical telephony ports fitted to the SBC. Digital ports carry ISDN or CAS signalling and are referenced by Signalling Groups, while analog ports provide FXS and FXO connections for handsets, paging equipment and legacy devices.
 
         DigitalHeading   = Digital Ports
         DigitalTable     = Digital Ports
@@ -597,7 +597,7 @@
         NotFound         = No telephony mapping tables were found.
 
         Heading          = Telephony Mapping
-        SectionInfo      = The following section details the tables that translate between signalling protocols and handle call failure. A cause code reroute table lets a call be retried on another route when the far end returns particular Q.850 causes, and the SIP to Q.850 tables map between SIP response codes and ISDN cause values.
+        SectionInfo      = The following section details the tables that translate between signalling protocols and handle call failure. A Cause Code Reroute table lets a call be retried on another route when the far end returns particular Q.850 causes, and the SIP to Q.850 tables map between SIP response codes and ISDN cause values.
 
         RerouteHeading   = Cause Code Reroute Tables
         RerouteTable     = Cause Code Reroute Tables
@@ -652,7 +652,7 @@
         NotFound         = Every configuration object is referenced.
 
         Heading          = Unreferenced Objects
-        SectionInfo      = The following objects are defined on the SBC but nothing refers to them. This is usually stale configuration left behind when a table was superseded rather than a fault, and the WebUI gives no way to spot it because nothing lists the referrers of a table. Factory default tables commonly appear here on an appliance that has been fully configured. An object shown as referenced only by disabled configuration is still wired in: re-enabling one route entry brings it back into use, so it is listed separately rather than as unreferenced.
+        SectionInfo      = The following objects are defined on the SBC but nothing refers to them. This is usually stale configuration left behind when a table was superseded rather than a fault. Unfortunately, the Ribbon WebUI gives no way to identify these items, because nothing lists the referrers of a table. Factory default tables commonly appear here on an appliance that has been fully configured. An object shown as referenced only by disabled configuration is still wired in: re-enabling one route entry brings it back into use, so it is listed separately rather than as unreferenced.
 
         SummaryTable     = Unreferenced Objects
         ObjectType       = Type

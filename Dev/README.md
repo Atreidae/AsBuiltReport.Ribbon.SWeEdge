@@ -98,6 +98,45 @@ Invoke-ScriptAnalyzer -Path '.\AsBuiltReport.Ribbon.SWeEdge' -Recurse -Severity 
   servers are ordered by the parent table's base64 `Sequence` field. Rendering in ID order
   misrepresents how the appliance behaves.
 
+## Adding a service provider
+
+Recognised providers, such as Microsoft Teams Direct Routing, are defined in one place:
+`Get-AbrRibbonKnownProvider` in `Src\Private\Find-AbrRibbonProvider.ps1`. It returns one
+`[PSCustomObject]` per provider, and currently only Teams is defined. To add another (Zoom,
+Genesys, Enghouse and so on), emit a further object from that function. Nothing else needs
+registering.
+
+A configured SIP peer is matched against the list by `Find-AbrRibbonProvider`, and a match is
+used in two places: the firewall section (`Resolve-AbrRibbonFirewallRule`) adds the provider's
+flows and lists it under Detected Service Providers, and the topology diagram
+(`Resolve-AbrRibbonTopology`) labels the far end with its name.
+
+| Field | Purpose |
+|-------|---------|
+| `Name` | Shown in the report and in the generated flow names. |
+| `Exact` | Host names matched exactly. |
+| `Suffix` | Domain suffixes, with the leading dot. Matching is anchored to a full label, so `notmicrosoft.com` does not match `.microsoft.com`. |
+| `Cidr` | Optional. Address blocks used to match a peer configured by IP address rather than host name. |
+| `SignalingNetwork`, `MediaNetwork` | Display text for the provider's published ranges, used as the flow source and destination. |
+| `MediaProtocol`, `MediaPort` | Media flow rows are generated only when `MediaPort` is set. |
+| `RelayPort` | Optional. The transport relay row is generated only when it is set. |
+| `Reference` | Names the provider document the ranges came from. It is printed in each flow's note. |
+
+Things to watch when adding one:
+
+- Take the values from the provider's own published documentation and name it in `Reference`.
+  Do not infer ranges. The report already tells the reader to confirm them before applying
+  any rule.
+- Not every provider publishes fixed ranges. Some are region specific or are only given to
+  customers. Leave out `Cidr`, `MediaPort` or `RelayPort` where the provider does not publish
+  them, rather than guessing. A provider with no `MediaPort` gets no provider media rows, and
+  the generic peer media row still applies.
+- Matching is by what the signalling group is configured with. A provider reached through
+  something that does not appear in the SIP peer list will not be detected.
+- The `MediaProtocol` and `RelayPort` fields assume one value each. A provider with several
+  protocols or port ranges would need the flow generation extended, not just a new entry.
+- Add a case to `Tests\Resolver.Tests.ps1` next to the existing `Find-AbrRibbonProvider` tests.
+
 ## Reference
 
 `config_model.md` documents the Ribbon configuration data model: how tokens, IDs and
